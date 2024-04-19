@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JArreglos</h1>
+<h2>ordenación</h2>
+
+<p>Click en la opcion</p>
+<button onclick="llenar()">Llenar arreglo</button>
+<button onclick="imprimir()">Imprimir arreglo</button>
+<button onclick="ordenar()">Ordenar Arreglo</button>
+<button onclick="descendente()">Reordenar en descendente</button>
+<button onclick="tabla()">Tabla</button>
+<p id="demo"></p>
+
+<script>
+    var arreglo=[0,0,0,0,0,0,0,0,0,0];
+function llenar(){
+    //document.getElementById("demo"). innerHTML ="Entraste a la primera opcion";
+    for(i=0; i<10 ;i++){
+        arreglo[i]=Math.floor(Math.random()*100+1);
+    }
+}
+function imprimir(){
+    document.getElementById("demo"). innerHTML ="Contenido del arreglo <br>"+arreglo; 
+}
+function ordenar(){
+    //document.getElementById("demo"). innerHTML ="Entraste a la tercera opcion";
+    arreglo=arreglo.sort(function(a, b){return a - b});
+    document.getElementById("demo"). innerHTML ="Ordenado <br>"+arreglo;
+}
+function descendente(){
+    //document.getElementById("demo"). innerHTML ="Entraste a la cuarta opcion";
+    arreglo=arreglo.reverse();
+    document.getElementById("demo"). innerHTML ="Reordenado <br>"+arreglo;
+}
+function tabla(){
+    var texto="";
+    texto=texto+"<table border=1px><tr>";
+    for(i=0; i<10; i++){
+        texto=texto+"<td>"+arreglo[i]+"</td>";
+    }
+    texto=texto+"</tr></table>"
+    document.getElementById("demo"). innerHTML ="<br>"+texto;
+}
+</script>
+
+</body>
+</html>

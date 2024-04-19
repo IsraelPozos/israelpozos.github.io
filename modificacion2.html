@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Bienvenida del usuario</title>
+
+  <script type = "text/javascript">
+  function alertName() {
+
+    var user= document.forms[0].user.value;
+    var pass= document.forms[0].pass.value;
+
+    if(user == 'admin' && pass=='admin'){
+        document.write("ACCESO PERMITIDO");
+    }else{
+        document.write("ACCESO DENEGADO");
+    }
+    
+    return true;
+  }
+  </script>
+</head>
+
+<body>
+
+<form id="myform" onsubmit="return alertName();">
+<p>User:  <input id="user" name="user" type="text" /></p>
+<p>Pass:  <input id="pass" name="pass" type="password" /></p>
+<p><input type="submit" /></p>
+
+</form>
+</body>
+</html>
