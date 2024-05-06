@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <script>
+         var intentos=6;
+        function dibujar(){
+         //cabeza
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            let correcta= document.forms[0].pal.value;
+            
+            if(correcta!='ola'){
+                intentos--;
+                switch(intentos){
+                case 5:
+                ctx.beginPath();
+                ctx.arc(200,50,40,0,2*Math.PI);
+                ctx.stroke();
+                break;
+                case 4:
+                //mano izq
+                ctx.beginPath();
+                ctx.moveTo(200, 90);
+                ctx.lineTo(100, 120);
+                ctx.stroke();
+                break;
+                case 3:
+                //mano der
+                ctx.beginPath();
+                ctx.moveTo(200, 90);
+                ctx.lineTo(300, 120);
+                ctx.stroke();
+                break;
+                case 2:
+                //cuerpo
+                ctx.beginPath();
+                ctx.moveTo(200, 90);
+                ctx.lineTo(200, 220);
+                ctx.stroke();
+                break;
+                case 1:
+                //pie izq
+                ctx.beginPath();
+                ctx.moveTo(200, 220);
+                ctx.lineTo(280, 280);
+                ctx.stroke();
+                break;
+                case 0:
+                //pie der
+                ctx.beginPath();
+                ctx.moveTo(200, 220);
+                ctx.lineTo(110, 280);
+                ctx.stroke();
+                break;
+                case -1:
+                alert("Perdiste");
+                limpiar();
+                }
+            }
+            if(correcta=='ola'){
+                alert("GANASTE");
+                limpiar();
+            }
+        }
+        function limpiar(){
+            const canvas= document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0,0,400,400);
+            intentos=6;
+            correcta="";
+        }
+    </script>
+</head>
+<body>
+    <h1>Ahorcado Parte 1</h1>
+    <canvas id="myCanvas" width="400" height="400" style="border: 1px solid red;"></canvas>
+    <form id="myform" onsubmit="return dibujar();">
+        <p>Palabra: <input id="pal" name="pal" type="text" /></p>
+    </form>
+    <p><button onclick="dibujar()">Jugar</button></p>
+    <p><button onclick="limpiar()">Reset</button></p>
+</body>
+</html>
