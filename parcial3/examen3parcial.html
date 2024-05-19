@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="jspdf.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
+    <title>Examen tercer parcial</title>
+</head>
+<body>
+    <form id="myform" onsubmit="return generador();">
+        <p>Longitud:  <input id="long" name="long" type="text"></p>
+        <p>Incluir letras minúsculas<input id="min" name="min" type="checkbox"></p>
+        <p>Incluir letras mayúsculas<input id="mayus" name="mayus" type="checkbox"></p>
+        <p>Incluir números de 0-9<input id="num" name="num" type="checkbox"></p>
+        <p>Incluir caracteres especiales<input id="caract" name="caract" type="checkbox"></p>
+        <p>Cantidad de contraseñas a generar: <input id="cant" name="cant" type="text"></p>
+        <p><input type="submit"/></p>
+        <iframe frameborder="1" width="300" height="200"></iframe>
+    </form>
+    <script>
+        function generador(){
+            var doc = new jsPDF();
+            doc.setFontSize(22);
+            var long= parseInt(document.forms[0].long.value);
+            var min= document.forms[0].min.checked;
+            var mayus= document.forms[0].mayus.checked;
+            var num= document.forms[0].num.checked;
+            var caract= document.forms[0].caract.checked;
+            var cant= parseInt(document.forms[0].cant.value);
+            var arreglo=[];
+            var charmin='abcdefghijklmnopqrstuvwxyz';
+            var charmayus='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var charcaract='!@#$%^&*()';
+            var largomin = charmin.length;
+            var largomayus = charmayus.length;
+            var largocaract= charcaract.length;
+            
+            if(min!==true && mayus!==true && num!==true && caract!==true){
+                document.write("No seleccionaste ninguna opcion a incluir en tus contraseñas");
+                return false;
+            }else{
+                if(long>=8 && long<=15){
+                    if(cant>=1){
+                        for(i=0; i<cant; i++){
+                            x=0;
+                            do{
+                                    if(min==true){
+                                        alea=charmin.charAt(Math.floor(Math.random() * largomin));
+                                        arreglo=arreglo+alea;
+                                        x++;
+                                    }
+                                    if(x>=long){
+                                        break;
+                                    }
+                                    if(mayus==true){
+                                        alea=charmayus.charAt(Math.floor(Math.random() * largomayus));
+                                        arreglo+=alea;
+                                        x++;
+                                    }
+                                    if(x>=long){
+                                        break;
+                                    }
+                                    if(num==true){
+                                        alea=Math.floor(Math.random()*9+0);
+                                        arreglo+=+alea;
+                                        x++;
+                                    }
+                                    if(x>=long){
+                                        break;
+                                    }
+                                    if(caract==true){
+                                        alea=charcaract.charAt(Math.floor(Math.random() * largocaract));
+                                        arreglo+=alea;
+                                        x++;
+                                    }
+                            }while(x<long);
+                            prompt("Contraseña "+(i+1)+": "+arreglo+"    ");
+                            doc.text(20, 30 + (i*10), 'Contraseña '+(i+1)+': '+arreglo+'    ');
+                            arreglo="";
+                        }
+                        var string = doc.output('datauristring');
+
+                        $('iframe').attr('src', string);
+                    }else{
+                        document.write("Cantidad de contraseñas a generar menor a 1");
+                        return false; 
+                    }
+                }else{
+                    document.write("Longitud de contraseña menor a 8 o mayor a 15");
+                    return false;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
