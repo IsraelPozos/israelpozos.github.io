@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario Primer Contacto Tutorías</h1>
+    <form action="mailto: 183810@upslp.edu.mx" method="post">
+        <p>Nombre <input type="text" name="nombre" size="50"></p>
+        <p>Matrícula <input type="number" min="180000" name="matricula"></p>
+        <p>Semestre 
+            <input type="radio" name="semestre" value="1">1
+            <input type="radio" name="semestre" value="2">2
+            <input type="radio" name="semestre" value="3">3
+            <input type="radio" name="semestre" value="4">4
+            <input type="radio" name="semestre" value="5">5
+            <input type="radio" name="semestre" value="6">6
+            <input type="radio" name="semestre" value="7">7
+            <input type="radio" name="semestre" value="8">8
+            <input type="radio" name="semestre" value="9">9
+            <input type="radio" name="semestre" value="9+">9+
+        </p>
+        <p>Fecha <input type="date" name="fecha"></p>
+
+        <p>Materia 1 Semestre Anterior <input type="text" name="mat1" size="20"></p>
+        <p>Materia 2 Semestre Anterior <input type="text" name="mat2" size="20"></p>
+        <p>Materia 3 Semestre Anterior <input type="text" name="mat3" size="20"></p>
+        <p>Materia 4 Semestre Anterior <input type="text" name="mat4" size="20"></p>
+        <p>Materia 5 Semestre Anterior <input type="text" name="mat5" size="20"></p>
+        <p>Materia 6 Semestre Anterior <input type="text" name="mat6" size="20"></p>
+
+        <p>Calificación Final Materia 1 Semestre Anterior <input type="number" name="cal1" min="0" max="10"></p>
+        <p>Calificación Final Materia 2 Semestre Anterior <input type="number" name="cal2" min="0" max="10"></p>
+        <p>Calificación Final Materia 3 Semestre Anterior <input type="number" name="cal3" min="0" max="10"></p>
+        <p>Calificación Final Materia 4 Semestre Anterior <input type="number" name="cal4" min="0" max="10"></p>
+        <p>Calificación Final Materia 5 Semestre Anterior <input type="number" name="cal5" min="0" max="10"></p>
+        <p>Calificación Final Materia 6 Semestre Anterior <input type="number" name="cal6" min="0" max="10"></p>
+
+        <p>CUAL FUE EL MOTIVO POR EL QUE REPROBASTE LAS MATERIAS (SI APLICA)
+            <textarea name="motivo" cols="100" rows="4" placeholder="Aquí tu comentario"></textarea>
+        </p>
+
+        <p>Como consideras tu rendimiento en general:
+         <input type="radio" name="rendi" value="Malo">Malo
+        <input type="radio" name="rendi" value="Regular">Regular
+        <input type="radio" name="rendi" value="Bueno">Bueno
+        <input type="radio" name="rendi" value="Excelente">Excelente
+        </p>
+
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+        </p>
+    </form>
+</body>
+</html>
