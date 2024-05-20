@@ -1,0 +1,84 @@
+body {
+  padding: 0 50px;
+  background-color: hwb(282 78% 7%);
+  font-family: sans-serif;
+  text-align: justify;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 0;
+  font-family: "SigmarOne";
+  font-size: 3rem;
+  text-align: center;
+  color:hwb(313 12% 54%);
+  text-shadow: 3px 3px rgb(255, 255, 255);
+}
+
+h2 {
+  margin: 0;
+  color:hwb(313 12% 54%);
+  font-family: "SigmarOne";
+  font-size: 3rem;
+  text-transform: capitalize;
+  text-shadow: 3px 3px rgb(255, 255, 255);
+}
+
+strong {
+  padding: 0 10px;
+  background-color: white;
+  color: rgb(238, 74, 74);
+  font-family: cursive;
+}
+
+i {
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family:cursive;
+}
+
+time {
+  color: rgb(87, 87, 221);
+}
+
+img {
+  border: hwb(313 12% 54%) 5px solid;
+  padding: 5px;
+}
+
+img.izquierda {
+  float: left;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+img.derecha {
+  float: right;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+p.izquierda {
+  float: left;
+  width: 33%;
+}
+
+p.centrado {
+  text-align: center;
+}
+
+hr {
+  clear: both;
+  width: 66%;
+  height: 10px;
+  border: rgb(141, 89, 224) 1px solid;
+  border-radius: 5px;
+  margin: 40px auto;
+  background-color: hwb(300 22% 61%);
+}
+
+address {
+  text-align: right;
+  font-style: normal
+}
