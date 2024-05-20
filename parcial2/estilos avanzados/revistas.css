@@ -1,0 +1,63 @@
+html {
+    background-color: hwb(150 25% 30%);
+    line-height: 125%;
+    text-align:justify ;
+    hyphens: auto;
+}
+
+section {
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content:flex-start ;
+}
+
+article {
+    display: flex;
+    flex-direction:row ;
+    width: 500px;
+    margin: 80px;
+    border: rgb(30, 75, 7) 8px solid;
+    background-color: hwb(150 50% 30%);
+    height: 500px;
+}
+
+h2 {
+    margin: hwb(150 25% 30%);
+    padding: 13px;
+    border-right: black 1px solid;
+}
+
+div {
+    margin:5px ;
+}
+img{
+    border: green solid 3px;
+}
+p{
+    color: rgb(10, 66, 10);
+    font-size: 1rem;
+    font-style: oblique;
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 40.99999%;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .responsive {
+      width: 29.99999%;
+      margin: 3px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px) {
+    .responsive {
+      width: 100%;
+    }
+  }
+
